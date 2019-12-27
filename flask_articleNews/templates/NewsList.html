@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NewsList</title>
+</head>
+<body>
+{% for news in df_news_data %}
+    <br>
+    <a href="{{ news.url }}"target =“_ blank">{{ news.title }}</a>
+        <td>{{ news.name }}</td>
+        <td>{{ news.get_time }}</td>
+    <a href="{{ url_for("update_news_data",num=1,id=news.id) }}">待整理</a>
+    <a href="{{ url_for("update_news_data",num=2,id=news.id) }}">已完成</a>
+    </br>
+{% endfor %}
+
+</body>
+</html>
+
+

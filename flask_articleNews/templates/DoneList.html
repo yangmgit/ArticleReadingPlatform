@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>已完成</title>
+</head>
+<body>
+{% for done in df_done_data %}
+    <br>
+    <a href="{{ done.url }}"target ="_ blank">{{ done.title }}</a>
+        <td>{{ done.name }}</td>
+        <td>{{ done.get_time }}</td>
+    <a href="{{ url_for("update_done_data",num=1,id=done.id,type=done.type) }}">待整理</a>
+    <a href="{{ url_for("update_done_data",num=0,id=done.id,type=done.type) }}">删除</a>
+    </br>
+{% endfor %}
+
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>待整理</title>
+</head>
+<body>
+{% for todo in df_todo_data %}
+    <br>
+    <a href="{{ todo.url }}"target ="_ blank">{{ todo.title }}</a>
+        <td>{{ todo.name }}</td>
+        <td>{{ todo.get_time }}</td>
+    <a href="{{ url_for("update_todo_data",num=2,id=todo.id,type=todo.type) }}">已完成</a>
+    <a href="{{ url_for("update_todo_data",num=0,id=todo.id,type=todo.type) }}">删除</a>
+    </br>
+{% endfor %}
+
+</body>
+</html>
